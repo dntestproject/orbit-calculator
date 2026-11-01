@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Changelog — Orbit</title>
+  <meta name="description" content="Orbit 1.0.0 release notes and version history.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/PixelOperator.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="subhead">
+    <a class="subhead__mark" href="index.html">ORBIT</a>
+    <nav class="subhead__nav"><a href="index.html">Home</a><a href="download.html">Download</a><a href="roadmap.html">Roadmap</a></nav>
+  </header>
+  <main class="subpage">
+    <div class="subpage__inner">
+      <p class="subpage__eyebrow">CHANGELOG</p>
+      <h1>Release notes</h1>
+      <p class="subpage__lead">Every version, what changed and what was verified before it shipped. The current build is 1.0.0.</p>
+
+      <div class="subpage__steps">
+        <div class="subpage__step"><b>1.0.0</b><p><strong>2026-10-26 — first stable build.</strong><br>
+          Expression engine with live preview and a committed history. Scientific keypad with a 2nd bank, DEG/RAD with exact quadrant handling, memory register persisted across restarts. Nine unit converters, exact bill splitter with ceiling shares, four accent palettes, Material You, haptics and digit grouping. Hardware keyboard support. 137 JVM tests and 26 emulator tests passing. Debug APK 18 MB; release build 1.5 MB (unsigned).</p></div>
+        <div class="subpage__step"><b>0.9</b><p><strong>Internal.</strong> Parser rewrite from chained operations to recursive descent; implicit multiplication and factorial added; history capped at 100 entries with search.</p></div>
+        <div class="subpage__step"><b>0.5</b><p><strong>Internal.</strong> Calculator shell, keypad and theme system. First emulator screenshot pass.</p></div>
+      </div>
+
+      <h2>Verification for 1.0.0</h2>
+      <ul>
+        <li>JVM: grammar, precedence, functions, domains, formatting boundaries, all unit conversions, money rounding and split invariants.</li>
+        <li>Emulator: arithmetic, live preview, scientific/radian mode, memory, history search and reuse, persistence across activity restarts, tab-state retention, converters, split rounding, error paths, hardware keyboard, landscape rotation, theme switching and Material You.</li>
+        <li>Visual capture: light, dark scientific, Material You, converter and split screens.</li>
+      </ul>
+      <div class="subpage__split">
+        <img src="assets/images/orbit-converter.png" alt="Orbit converter">
+        <img src="assets/images/orbit-split.png" alt="Orbit bill splitter">
+      </div>
+
+      <p><a class="footer-link" href="download.html">Download 1.0.0</a> · <a class="footer-link" href="roadmap.html">What comes next</a></p>
+      <a class="subpage__back" href="index.html">← Back to the site</a>
+    </div>
+  </main>
+  <footer class="subfooter">
+    <span>© 2026 ORBIT. MAKE ROOM FOR NUMBERS.</span>
+    <nav><a href="technology.html">Technology</a><a href="roadmap.html">Roadmap</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" class="is-loading">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Orbit — A better way to do the math</title>
+  <meta name="description" content="An expression calculator with live preview, scientific keypad, searchable history, nine converters and an exact bill splitter. No accounts. No ads. No internet permission.">
+  <link rel="canonical" href="https://orbit.example/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Orbit">
+  <meta property="og:title" content="Orbit — A better way to do the math">
+  <meta property="og:description" content="An expression calculator with live preview, scientific keypad, history, converter and bill splitter. Private by default.">
+  <meta property="og:image" content="assets/images/og.png">
+  <meta name="theme-color" content="#121212">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/images/favicon-180.png">
+  <link rel="preload" href="assets/fonts/PixelOperator.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Geist-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <noscript>
+    <style>
+      .loader { display: none !important; }
+      html.is-loading, html.is-loading body { overflow: auto !important; height: auto !important; }
+      [data-reveal], [data-scramble] { opacity: 1 !important; transform: none !important; }
+      .rules__line { transform: scaleY(1); }
+      .pin { height: auto !important; }
+      .pin > section { position: relative; height: auto; overflow: visible; }
+      .story-card, .story-phone { display: none; }
+      .try, .reviews { height: auto; }
+    </style>
+  </noscript>
+</head>
+<body>
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader__tiles" id="loader-tiles"></div>
+    <div class="loader__inner" id="loader-inner">
+      <span class="loader__mark">ORBIT</span>
+      <div class="loader__bar"><i id="loader-fill"></i></div>
+      <span class="loader__count" id="loader-count">000</span>
+    </div>
+  </div>
+
+  <header id="site-header" class="site-header site-header--centered">
+    <a class="site-header__mark" href="#top" data-reveal data-tone-probe>ORBIT</a>
+    <a class="site-header__download" href="download.html" data-tone-probe><span data-reveal>Download</span></a>
+  </header>
+
+  <div class="stage" id="top">
+    <div class="edge-blur" aria-hidden="true">
+      <i class="edge-blur__layer"></i><i class="edge-blur__layer"></i>
+      <i class="edge-blur__layer"></i><i class="edge-blur__layer"></i>
+    </div>
+
+    <div class="rules" aria-hidden="true">
+      <i class="rules__line"></i>
+      <i class="rules__line"></i>
+      <i class="rules__line" data-rule-keep></i>
+      <i class="rules__line"></i>
+      <i class="rules__progress" data-scroll-pixel></i>
+    </div>
+
+    <header class="hero" id="hero">
+      <div class="hero__slot" data-slot="hero"></div>
+      <h1 class="hero__title t-display">
+        <span class="hero__mask"><span data-reveal-line>A better way</span></span>
+        <span class="hero__mask"><span data-reveal-line>to do the math</span></span>
+      </h1>
+    </header>
+
+    <main id="main">
+      <section class="features" id="features" aria-label="How Orbit works" data-rule-dim>
+        <div class="pxt" data-pixel-transition="top" data-rule-dim="true" aria-hidden="true" style="--pxt-color: var(--color-paper)"></div>
+
+        <article class="chapter" id="create" aria-labelledby="create-title" data-lines-group>
+          <div class="chapter__slot" data-slot="create"></div>
+          <div class="chapter__copy">
+            <h2 class="chapter__title t-display" id="create-title">
+              <span data-scramble>Type any expression</span>
+              <span data-scramble>watch it solve</span>
+            </h2>
+            <p class="t-body" data-lines>Enter full expressions with parentheses, powers, factorials and functions — Orbit previews the answer while you type, then files every result in searchable history.</p>
+            <p class="t-body" data-lines>A real grammar handles precedence, implicit multiplication and constants, so the maths behaves the way it reads. Degrees, radians and memory travel with you.</p>
+            <a class="chapter__link pbtn pbtn--ghost pbtn--link" href="technology.html" data-reveal><span class="pbtn__label">Explore the engine</span></a>
+          </div>
+        </article>
+
+        <article class="chapter" id="shares" aria-labelledby="shares-title" data-lines-group>
+          <div class="chapter__slot" data-slot="shares"></div>
+          <div class="chapter__copy">
+            <h2 class="chapter__title t-display" id="shares-title">
+              <span data-scramble>Keep every result</span>
+              <span data-scramble>within reach</span>
+            </h2>
+            <p class="t-body" data-lines>Orbit remembers the last 100 results plus memory across restarts. Search, reuse, copy or clear an entry without ever losing the calculation you were in the middle of.</p>
+          </div>
+        </article>
+
+        <article class="chapter" id="threshold" aria-labelledby="threshold-title" data-lines-group>
+          <div class="chapter__slot" data-slot="threshold"></div>
+          <div class="chapter__copy">
+            <h2 class="chapter__title t-display" id="threshold-title">
+              <span data-scramble>From simple sums</span>
+              <span data-scramble>to steep math</span>
+            </h2>
+            <p class="t-body" data-lines>Nine converters, a bill splitter with exact money rounding, and a scientific keypad that treats sin 180° with the same care as 2 + 2. Every edge case is handled.</p>
+          </div>
+        </article>
+      </section>
+
+      <div class="pin" id="safety-wrap" data-hold="110">
+        <section class="safety" id="safety" aria-labelledby="safety-title" data-rule-dim>
+          <div class="pxt" data-pixel-transition="top" aria-hidden="true" style="--pxt-color: var(--color-ink)"></div>
+          <div class="safety__lines" id="safety-title">
+            <h2 class="t-display" data-safety-line>
+              <span data-scramble-manual>Private by</span>
+              <span data-scramble-manual>default</span>
+            </h2>
+            <p class="t-display" data-safety-line>
+              <span data-scramble-manual>Nothing leaves</span>
+              <span data-scramble-manual>the device</span>
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <div class="pin" id="privacy-wrap" data-hold="286.55">
+        <section class="privacy" id="privacy" aria-label="Privacy" data-rule-dim>
+          <div class="pxt" data-pixel-transition="top" data-rule-dim="true" aria-hidden="true" style="--pxt-color: var(--color-paper)"></div>
+          <div class="privacy__stage">
+            <div class="privacy__statement" data-statement="0">
+              <p class="privacy__lede t-body">Your numbers never leave your device</p>
+              <h2 class="privacy__title t-display t-display--xl">
+                <span class="privacy__mask"><span data-scramble-manual>No accounts</span></span>
+                <span class="privacy__mask"><span data-scramble-manual>No ads</span></span>
+                <span class="privacy__mask"><span data-scramble-manual>No tracking</span></span>
+              </h2>
+            </div>
+            <div class="privacy__statement" data-statement="1">
+              <p class="privacy__lede t-body">Every result, ready to reuse.</p>
+              <h2 class="privacy__title t-display t-display--xl">
+                <span class="privacy__mask"><span data-scramble-manual>Clipboard</span></span>
+              </h2>
+            </div>
+            <div class="privacy__statement" data-statement="2">
+              <p class="privacy__lede t-body">Precision on every device.</p>
+              <h2 class="privacy__title t-display t-display--xl">
+                <span class="privacy__mask"><span data-scramble-manual>Offline</span></span>
+                <span class="privacy__mask"><span data-scramble-manual>ready</span></span>
+              </h2>
+            </div>
+
+            <span class="privacy__mark privacy__mark--lan" data-mark="2" aria-hidden="true"></span>
+            <span class="privacy__mark privacy__mark--lan is-mirrored" data-mark="2" aria-hidden="true"></span>
+            <span class="privacy__mark privacy__mark--qr" data-mark="1" data-qr="0" style="--x:298;--y:157" aria-hidden="true"></span>
+            <span class="privacy__mark privacy__mark--qr" data-mark="1" data-qr="1" style="--x:413;--y:478" aria-hidden="true"></span>
+            <span class="privacy__mark privacy__mark--qr" data-mark="1" data-qr="2" style="--x:1243;--y:597" aria-hidden="true"></span>
+            <span class="privacy__mark privacy__mark--qr" data-mark="1" data-qr="3" style="--x:1295;--y:154" aria-hidden="true"></span>
+          </div>
+        </section>
+      </div>
+
+      <div class="pin" id="try-wrap" data-hold="125" data-hold-narrow="0">
+        <section class="try" id="try" aria-labelledby="try-title" data-try data-step="create">
+          <div class="pxt" data-pixel-transition="top" aria-hidden="true" style="--pxt-color: var(--color-ink)"></div>
+          <div class="try__box" aria-hidden="true"></div>
+          <div class="try__intro" aria-hidden="true">
+            <p class="try__hello t-display"><span class="try__mask"><span data-scramble-manual>Try it yourself</span></span></p>
+          </div>
+          <header class="try__head">
+            <h2 class="try__title t-display" id="try-title">
+              <span data-scramble data-try-count-label>1/2</span>
+              <span class="try__name" data-try-name><span data-scramble>Split the bill</span></span>
+            </h2>
+          </header>
+          <div class="try__field" data-reveal>
+            <label class="try__k" for="try-input" data-try-field-label>Your bill</label>
+            <input class="try__input" id="try-input" type="text" value="128.40" maxlength="12" inputmode="decimal" spellcheck="false" autocomplete="off" autocapitalize="off" data-try-input>
+            <p class="try__out" data-try-out aria-live="polite"></p>
+            <select class="try__count try__currency" data-try-currency aria-label="Currency">
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="GBP">GBP</option>
+              <option value="IDR">IDR</option>
+            </select>
+          </div>
+          <div class="try__slot" data-slot="try"></div>
+          <div class="try__row">
+            <span class="try__k" id="try-k-label">Split between</span>
+            <span class="try__stepper" role="group" aria-labelledby="try-k-label">
+              <button type="button" data-try-step="-1" aria-label="Fewer people">−</button>
+              <output data-try-k aria-live="polite">03</output>
+              <span class="try__of">of 06</span>
+              <button type="button" data-try-step="1" aria-label="More people">+</button>
+            </span>
+          </div>
+          <button class="try__go pbtn pbtn--ghost" type="button" data-try-share-all><span class="pbtn__label">Split the bill</span></button>
+          <div class="try__shares" role="group" aria-label="Shares. Tap a share to copy it." data-try-shares></div>
+          <div class="try__done" data-try-done>
+            <p class="try__ok t-display" data-try-ok>All shares copied</p>
+          </div>
+          <button class="try__reset" type="button" data-try-reset>Split another bill</button>
+          <p class="sr-only" aria-live="polite" data-try-live></p>
+        </section>
+      </div>
+
+      <div class="pin" id="reviews-wrap" data-hold="120" data-hold-narrow="0">
+        <section class="reviews" id="testimonials" aria-label="Reviews" data-rule-dim>
+          <div class="pxt" data-pixel-transition="top" data-rule-dim="true" aria-hidden="true" style="--pxt-color: var(--color-paper)"></div>
+          <div class="reviews__stage">
+            <div class="reviews__phone">
+              <div class="phone" style="--behind: 0" aria-hidden="true">
+                <div class="phone__frame" data-phone-mount></div>
+                <div class="phone__card" data-slot="phone-reviews"></div>
+              </div>
+            </div>
+            <ul class="reviews__list">
+              <li class="reviews__plate" data-review data-rule-cover data-speed="1" style="--x:14.5;--y:4%"><figure><blockquote>Every result I need is one tap away. Orbit replaced three apps on my home screen.</blockquote><figcaption>Nadia S.</figcaption></figure></li>
+              <li class="reviews__plate" data-review data-rule-cover data-speed="1.35" style="--x:70.2;--y:14%"><figure><blockquote>I type 1250+375 in the meeting and the preview is already there. Nobody waits for me anymore.</blockquote><figcaption>Marcus T.</figcaption></figure></li>
+              <li class="reviews__plate" data-review data-rule-cover data-speed="0.8" style="--x:7.5;--y:50%"><figure><blockquote>The bill splitter rounds with exact money maths, so the table never argues about cents.</blockquote><figcaption>Priya R.</figcaption></figure></li>
+              <li class="reviews__plate" data-review data-rule-cover data-speed="1.15" style="--x:79.4;--y:52%"><figure><blockquote>Scientific mode that respects degrees. sin(180) finally gives me zero instead of noise.</blockquote><figcaption>Elif K.</figcaption></figure></li>
+              <li class="reviews__plate" data-review data-rule-cover data-speed="1.05" style="--x:18;--y:92%"><figure><blockquote>No internet permission, no ads, no account. It is just a calculator, and that is the point.</blockquote><figcaption>Jonas W.</figcaption></figure></li>
+              <li class="reviews__plate" data-review data-rule-cover data-speed="0.95" style="--x:73;--y:96%"><figure><blockquote>History survives restarts. I found a total from last month in two seconds.</blockquote><figcaption>Amara D.</figcaption></figure></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <section class="cta" id="download" aria-labelledby="cta-title" data-rule-dim>
+        <div class="cta__slot" data-slot="cta"></div>
+        <h2 class="cta__title t-display t-display--xl" id="cta-title">
+          <span data-scramble>Start making</span>
+          <span data-scramble>every number count</span>
+        </h2>
+        <div class="cta__button" data-reveal>
+          <div class="dl" data-dl style="max-width:100%">
+            <a class="dl__btn pbtn" href="download.html" data-download>
+              <span class="pbtn__label">Download Orbit</span>
+              <svg class="dl__qr" viewBox="-2 -2 37 37" aria-hidden="true" shape-rendering="crispEdges" data-qr-grid></svg>
+            </a>
+          </div>
+          <a class="cta__roadmap pbtn pbtn--ghost pbtn--link" href="roadmap.html"><span class="pbtn__label">See the roadmap</span></a>
+        </div>
+        <div class="pxt pxt--bottom" data-pixel-transition="bottom" data-rule-dim="true" aria-hidden="true" style="--pxt-color: var(--color-paper)"></div>
+      </section>
+    </main>
+
+    <div class="story-phone" data-story-phone aria-hidden="true">
+      <div class="story-phone__phone">
+        <div class="phone" style="--behind: 0">
+          <div class="phone__frame" data-phone-mount></div>
+          <div class="phone__card" data-slot="phone"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer" class="footer">
+    <div class="footer__inner" id="footer-inner">
+      <div class="footer__meta">
+        <p>© 2026 ORBIT. MAKE ROOM FOR NUMBERS.</p>
+        <p>MADE FOR THE APP</p>
+      </div>
+      <nav class="footer__nav" aria-label="More">
+        <ul class="footer__row">
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="roadmap.html">Roadmap</a></li>
+          <li><a href="download.html">Download</a></li>
+        </ul>
+        <ul class="footer__row">
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="changelog.html">Changelog</a></li>
+        </ul>
+      </nav>
+      <a class="footer__wordmark" href="#top" aria-label="Orbit, back to the top" data-wordmark>
+        <span aria-hidden="true">O</span><span aria-hidden="true">R</span><span aria-hidden="true">B</span><span aria-hidden="true">I</span><span aria-hidden="true">T</span>
+      </a>
+    </div>
+  </footer>
+
+  <div class="story-veil" aria-hidden="true"></div>
+  <div class="story-card" data-story-card aria-hidden="true">
+    <canvas class="story-card__canvas" data-story-canvas></canvas>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

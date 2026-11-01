@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Privacy — Orbit</title>
+  <meta name="description" content="Orbit has no internet permission, no accounts, no ads and no analytics. History, memory and settings stay on the device.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/PixelOperator.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="subhead">
+    <a class="subhead__mark" href="index.html">ORBIT</a>
+    <nav class="subhead__nav"><a href="index.html">Home</a><a href="download.html">Download</a><a href="terms.html">Terms</a></nav>
+  </header>
+  <main class="subpage">
+    <div class="subpage__inner">
+      <p class="subpage__eyebrow">PRIVACY — LAST UPDATED 2026-10-26</p>
+      <h1>Nothing leaves the device</h1>
+      <p class="subpage__lead">Orbit is a calculator. It does not need a server, an account, an advertising ID or a crash reporter, so it does not ask for them. The Android manifest contains no internet permission.</p>
+
+      <h2>What Orbit stores</h2>
+      <ul>
+        <li>The last 100 calculations: the expression, its formatted result and the timestamp.</li>
+        <li>Memory register and settings: theme, accent palette, digit grouping, precision, haptics, DEG/RAD.</li>
+        <li>Nothing else. There is no profile, no identifier and no contact list access.</li>
+      </ul>
+      <p>History and settings are stored as local JSON in the app's private storage. They are excluded from Android cloud backup and device-to-device transfer, so a reinstall starts clean.</p>
+
+      <h2>What Orbit never does</h2>
+      <ul>
+        <li>It does not connect to the internet.</li>
+        <li>It does not include an analytics, crash-reporting or advertising SDK.</li>
+        <li>It does not read contacts, location, files, photos, microphone or camera.</li>
+        <li>It does not sell, share or transmit calculations, because it has no way to transmit them.</li>
+      </ul>
+
+      <h2>Clipboard</h2>
+      <p>When you tap Copy, the formatted result is placed on the system clipboard. That action is initiated by you and handled by Android; Orbit does not read the clipboard in the background.</p>
+
+      <h2>Sideloaded builds</h2>
+      <p>The APK offered on this site is a debug-signed build for direct installation. It carries the same manifest and the same absence of network permission as the release build. Verify the hash printed in the build log if you want to confirm the file you installed.</p>
+
+      <h2>Your control</h2>
+      <p>Clear history at any time from the history sheet. Uninstalling Orbit removes its private storage. There is no remote copy to delete because no remote copy was ever made.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about this policy can be sent to the address listed in the build's README. This is a single-developer project; replies are manual.</p>
+      <a class="subpage__back" href="index.html">← Back to the site</a>
+    </div>
+  </main>
+  <footer class="subfooter">
+    <span>© 2026 ORBIT. MAKE ROOM FOR NUMBERS.</span>
+    <nav><a href="technology.html">Technology</a><a href="roadmap.html">Roadmap</a><a href="download.html">Download</a><a href="terms.html">Terms</a></nav>
+  </footer>
+</body>
+</html>

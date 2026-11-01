@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Download Orbit — Android calculator</title>
+  <meta name="description" content="Download Orbit 1.0.0 for Android. Expression calculator, scientific keypad, history, converter and bill splitter. No accounts, no ads, no internet permission.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/PixelOperator.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="subhead">
+    <a class="subhead__mark" href="index.html">ORBIT</a>
+    <nav class="subhead__nav"><a href="index.html">Home</a><a href="technology.html">Engine</a><a href="changelog.html">Changelog</a></nav>
+  </header>
+  <main class="subpage">
+    <div class="subpage__inner">
+      <p class="subpage__eyebrow">DOWNLOAD — ANDROID 8.0+</p>
+      <div class="subpage__hero">
+        <h1>Get Orbit</h1>
+        <p class="subpage__lead">One install, every day's arithmetic. 18 MB, no account, no ads, no internet permission. The APK below is a debug-signed build you can install directly.</p>
+        <div class="simplecard" aria-hidden="true">
+          <div class="simplecard__label"><span>ORBIT<br>CALCULATOR<br>1.0</span><b>06</b></div>
+          <div class="simplecard__rib"></div>
+          <div class="simplecard__tiles" id="tiles"></div>
+        </div>
+        <div class="subpage__store">
+          <a class="primary" href="assets/app/Orbit-1.0.0-debug.apk" download>Download APK · 18 MB</a>
+          <a href="changelog.html">What's new in 1.0.0</a>
+        </div>
+        <p class="subpage__note">SHA-256 is listed in the build log inside the repository. Android may ask you to allow installs from this browser; the APK is debug-signed for direct sideloading.</p>
+      </div>
+
+      <h2>Install in three steps</h2>
+      <div class="subpage__steps">
+        <div class="subpage__step"><b>01</b><p>Open this page on the Android phone and tap <strong>Download APK</strong>.</p></div>
+        <div class="subpage__step"><b>02</b><p>When prompted, allow your browser to install unknown apps. This is the standard sideload flow.</p></div>
+        <div class="subpage__step"><b>03</b><p>Open the downloaded file, tap Install, and launch Orbit. No sign-in screen waits on the other side.</p></div>
+      </div>
+
+      <h2>What you get</h2>
+      <div class="subpage__split">
+        <img src="assets/images/orbit-light.png" alt="Orbit light theme calculator">
+        <img src="assets/images/orbit-dark-scientific.png" alt="Orbit dark theme with scientific keys">
+      </div>
+      <p>Live expression preview, a real grammar with precedence and implicit multiplication, scientific keys with DEG/RAD, memory, 100-entry searchable history, nine converters, an exact bill splitter, four accent palettes and Material You support on Android 12+.</p>
+
+      <h2>Requirements</h2>
+      <ul>
+        <li>Android 8.0 (API 26) or newer</li>
+        <li>~30 MB free storage (installed)</li>
+        <li>No Google account, no Google Play services required</li>
+        <li>No network permission at all</li>
+      </ul>
+      <p><a class="footer-link" href="privacy.html">Read the privacy notes</a> · <a class="footer-link" href="technology.html">How the engine works</a></p>
+      <a class="subpage__back" href="index.html">← Back to the site</a>
+    </div>
+  </main>
+  <footer class="subfooter">
+    <span>© 2026 ORBIT. MAKE ROOM FOR NUMBERS.</span>
+    <nav><a href="technology.html">Technology</a><a href="roadmap.html">Roadmap</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+  </footer>
+  <script>
+    const host = document.getElementById('tiles');
+    let s = 424242; const r = () => { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; };
+    const colours = ['#2e9a95', '#8fe3db', '#0a86c0', '#f4782e', '#00a9cc'];
+    for (let i = 0; i < 64; i++) {
+      if (r() < 0.5) continue;
+      const el = document.createElement('i');
+      const w = 8 + r() * 12;
+      el.style.width = w + 'px';
+      el.style.height = (7 + r() * 9) + 'px';
+      el.style.left = (8 + r() * 84) + '%';
+      el.style.top = (8 + r() * 84) + '%';
+      el.style.background = colours[Math.floor(r() * colours.length)];
+      el.style.opacity = 0.55 + r() * 0.45;
+      el.style.boxShadow = '0 0 10px #000';
+      host.appendChild(el);
+    }
+  </script>
+</body>
+</html>

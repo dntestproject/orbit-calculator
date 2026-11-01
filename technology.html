@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Technology — Orbit calculator engine</title>
+  <meta name="description" content="How Orbit parses and evaluates expressions, formats numbers, converts units and splits bills with exact money maths.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/PixelOperator.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="subhead">
+    <a class="subhead__mark" href="index.html">ORBIT</a>
+    <nav class="subhead__nav"><a href="index.html">Home</a><a href="download.html">Download</a><a href="roadmap.html">Roadmap</a></nav>
+  </header>
+  <main class="subpage">
+    <div class="subpage__inner">
+      <p class="subpage__eyebrow">TECHNOLOGY — THE ENGINE</p>
+      <h1>Under the hood</h1>
+      <p class="subpage__lead">Orbit does not chain keystrokes. It reads a full expression the way maths is written, evaluates it with a real grammar, and keeps the whole session on the device.</p>
+
+      <h2>A real expression grammar</h2>
+      <p>The engine is a two-stage pipeline: a lexer turns the input into numbers, names, operators and parentheses; a recursive-descent parser builds the expression with explicit precedence. That means <code>2 + 3 × 4</code> is fourteen, <code>2(3 + 4)</code> is fourteen through implicit multiplication, and <code>2^3^2</code> is right-associative. Parentheses, unary signs, postfix factorial and percent all parse without special-casing the keypad.</p>
+      <p>Function names resolve against a fixed table: <code>sin</code>, <code>cos</code>, <code>tan</code>, inverse trig, <code>ln</code>, <code>log</code>, <code>sqrt</code>, <code>cbrt</code>, <code>abs</code> and <code>exp</code>, plus the constants <code>π</code> and <code>e</code>. Trigonometry respects the DEG/RAD switch, including exact quadrant results: <code>sin 180°</code> evaluates to zero, not <code>1.2E-16</code>.</p>
+
+      <h2>Bounded and honest evaluation</h2>
+      <p>Every expression is length- and nesting-bounded before evaluation. Domain errors are reported as readable messages: division by zero, a factorial outside 0–170, a logarithm of a non-positive number, a non-finite result. Nothing silently becomes <code>NaN</code> on the display. Results keep full precision internally and are formatted at the edge, so chained calculations never accumulate rounding in the visible number.</p>
+
+      <h2>Number formatting</h2>
+      <p>Display precision is adjustable from 4 to 12 decimals. Optional digit grouping is display-only; the stored value is untouched. Very large or very small magnitudes switch to scientific notation. Copying a result copies the formatted value; reusing it keeps the full-precision internal value.</p>
+
+      <h2>History and memory</h2>
+      <p>Every committed result is appended to a 100-entry history with its expression. The list is searchable, and each entry can be reused as an expression, inserted as a value, copied or deleted. Memory (<code>MC</code>, <code>MR</code>, <code>M+</code>, <code>M−</code>, <code>MS</code>) is a separate register that survives restarts alongside history and settings. All of it is local JSON in app storage.</p>
+
+      <h2>Converters</h2>
+      <p>Nine categories — length, weight, temperature, area, volume, speed, time, data and energy — share one unit catalog. Temperature uses affine conversion with absolute-zero validation rather than a simple ratio. Data units include both decimal and binary definitions, and a one-tap swap keeps the direction obvious.</p>
+
+      <h2>Exact money maths</h2>
+      <p>The bill splitter never uses binary floating point for money. Amounts are parsed as <code>BigDecimal</code>, the tip is applied at full precision, and each share is rounded with <code>CEILING</code> so the collected total always covers the bill. The displayed currency label is a label; the maths is currency-agnostic.</p>
+
+      <h2>Private by construction</h2>
+      <p>Orbit's manifest has no internet permission. There is no analytics SDK, no ad SDK, no account system and no remote configuration. History, memory and settings are excluded from Android backup and device transfer. The app cannot send a number anywhere because it has no network capability to do so.</p>
+
+      <div class="subpage__cards">
+        <div class="subpage__card"><b>Parser</b><p>Lexer + recursive descent, precedence, implicit multiplication, postfix operations, bounded nesting.</p></div>
+        <div class="subpage__card"><b>Precision</b><p>Full-precision internal results, formatting at the display edge, DEG/RAD aware trigonometry.</p></div>
+        <div class="subpage__card"><b>Money</b><p>BigDecimal totals, percentage tips, ceiling shares, exact coverage of the bill.</p></div>
+        <div class="subpage__card"><b>Privacy</b><p>No network permission, no accounts, no ads, local storage only.</p></div>
+      </div>
+
+      <a class="subpage__back" href="index.html">← Back to the site</a>
+    </div>
+  </main>
+  <footer class="subfooter">
+    <span>© 2026 ORBIT. MAKE ROOM FOR NUMBERS.</span>
+    <nav><a href="download.html">Download</a><a href="roadmap.html">Roadmap</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+  </footer>
+</body>
+</html>
